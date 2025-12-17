@@ -1,0 +1,818 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meesho Clone</title>
+    <link rel="icon" href="./images/favicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Vaibhav Aher Contribution -->
+
+    <header>
+        <div class="navbar" role="navigation" aria-label="Primary Navigation">
+            <div class="logo">
+                <img src="https://www.meesho.com/assets/svgicons/meeshoLogo.svg" alt="Meesho Logo" />
+            </div>
+            <div class="search-bar" role="search">
+                <input id="search-input" type="text" placeholder="Try Saree, Kurti or Search by Product Code"
+                    aria-label="Search products" autocomplete="off" />
+                <i class="fas fa-search" aria-hidden="true"></i>
+                <div class="search-suggestions" id="search-suggestions" role="list" aria-label="Popular search tags">
+                    <span role="listitem" tabindex="0">saree</span>
+                    <span role="listitem" tabindex="0">tshirt</span>
+                    <span role="listitem" tabindex="0">short kurti</span>
+                    <span role="listitem" tabindex="0">kurti</span>
+                    <span role="listitem" tabindex="0">top for women</span>
+                    <span role="listitem" tabindex="0">earring</span>
+                    <span role="listitem" tabindex="0">watch</span>
+                    <span role="listitem" tabindex="0">top</span>
+                    <span role="listitem" tabindex="0">shoes</span>
+                    <span role="listitem" tabindex="0">bangle</span>
+                    <span role="listitem" tabindex="0">kurti set</span>
+                    <span role="listitem" tabindex="0">water bottle</span>
+                    <span role="listitem" tabindex="0">blouse</span>
+                    <span role="listitem" tabindex="0">palazzo</span>
+                    <span role="listitem" tabindex="0">cotton saree</span>
+                    <span role="listitem" tabindex="0">slipper</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <div class="dropdown" tabindex="0" aria-haspopup="true" aria-expanded="false"
+                    aria-label="Become a Supplier menu">
+                    <a href="#" tabindex="-1"><span>Become a Supplier</span></a>
+                    <div class="dropdown-content" role="menu" aria-hidden="true">
+                        <a href="#" role="menuitem" tabindex="-1">Supplier Panel</a>
+                        <a href="#" role="menuitem" tabindex="-1">Learn More</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-link" tabindex="0"><span>Investor Relations</span></a>
+                <div class="profile" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Profile menu">
+                    <a href="#" class="nav-link" tabindex="-1"><i class="far fa-user" aria-hidden="true"></i>
+                        <span>Profile</span></a>
+                    <div class="profile-dropdown" role="menu" aria-hidden="true">
+                        <h4>Hello User</h4>
+                        <p>To access your Meesho account</p>
+                        <button class="signup-btn" type="button">Sign Up</button>
+                        <button class="orders-btn" type="button">My Orders</button>
+                        <button class="delete-btn" type="button">Delete Account</button>
+                    </div>
+                </div>
+                <a href="#" class="nav-link cart" tabindex="0"><i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                    <span>Cart</span></a>
+            </div>
+            <div class="mobile-menu" aria-label="Mobile menu toggle" role="button" tabindex="0" aria-expanded="false">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times" style="display: none;"></i>
+            </div>
+        </div>
+        <nav class="category-nav" role="menubar" aria-label="Product Categories">
+            <a href="#" role="menuitem" tabindex="0" data-category="women-ethnic">Women Ethnic</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="women-western">Women Western</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="men">Men</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="kids">Kids</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="home-kitchen">Home & Kitchen</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="beauty-health">Beauty & Health</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="jewellery-accessories">Jewellery & Accessories</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="bags-footwear">Bags & Footwear</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="electronics">Electronics</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="sports">Sports</a>
+        </nav>
+
+        <!-- Mega menus for categories -->
+        <div id="mega-menu-container" aria-label="Category Submenu" aria-hidden="true"
+            style="position: relative; max-width: 1200px; margin: 0 auto;">
+            <!-- Women Ethnic -->
+            <div class="mega-menu" data-category="women-ethnic" role="region" aria-labelledby="women-ethnic"
+                style="display:none; position:absolute; left:0; right:0; background:#fff; border-top:3px solid #5a2a6a; box-shadow:0 4px 12px rgb(0 0 0 / 0.1); padding:20px 40px; box-sizing:border-box; z-index:40; font-size:14px; color:#444; flex-wrap: wrap;">
+                <div>
+                    <h3>Sarees</h3>
+                    <a href="#">All Sarees</a>
+                    <a href="#">Silk Sarees</a>
+                    <a href="#">Cotton Sarees</a>
+                    <a href="#">Chiffon Sarees</a>
+                    <a href="#">Georgette Sarees</a>
+                </div>
+                <div>
+                    <h3>Kurtis</h3>
+                    <a href="#">All Kurtis</a>
+                    <a href="#">Anarkali Kurtis</a>
+                    <a href="#">Long Kurtis</a>
+                    <a href="#">Short Kurtis</a>
+                    <a href="#">Embroidered Kurtis</a>
+                </div>
+                <div>
+                    <h3>Kurta Sets</h3>
+                    <a href="#">All Kurta Sets</a>
+                    <a href="#">Kurta Palazzo Sets</a>
+                    <a href="#">Kurta Pant Sets</a>
+                    <a href="#">Kurta Skirt Sets</a>
+                </div>
+                <div>
+                    <h3>Dupatta Sets</h3>
+                    <a href="#">All Dupatta Sets</a>
+                    <a href="#">Cotton Dupattas</a>
+                    <a href="#">Silk Dupattas</a>
+                </div>
+                <div>
+                    <h3>Suits & Dress Material</h3>
+                    <a href="#">All Suits</a>
+                    <a href="#">Dress Material</a>
+                </div>
+                <div>
+                    <h3>Lehengas</h3>
+                    <a href="#">All Lehengas</a>
+                    <a href="#">Designer Lehengas</a>
+                </div>
+                <div>
+                    <h3>Other Ethnic</h3>
+                    <a href="#">Blouses</a>
+                    <a href="#">Dupattas</a>
+                    <a href="#">Gown</a>
+                </div>
+            </div>
+
+            <!-- Women Western -->
+            <div class="mega-menu" data-category="women-western" role="region" aria-labelledby="women-western"
+                style="display:none; position:absolute; left:0; right:0; background:#fff; border-top:3px solid #5a2a6a; box-shadow:0 4px 12px rgb(0 0 0 / 0.1); padding:20px 40px; box-sizing:border-box; z-index:40; font-size:14px; color:#444; flex-wrap: wrap;">
+                <div>
+                    <h3>Tops</h3>
+                    <a href="#">All Tops</a>
+                    <a href="#">T-Shirts</a>
+                    <a href="#">Shirts</a>
+                    <a href="#">Blouses</a>
+                </div>
+                <div>
+                    <h3>Dresses</h3>
+                    <a href="#">All Dresses</a>
+                    <a href="#">Casual Dresses</a>
+                    <a href="#">Party Dresses</a>
+                </div>
+                <div>
+                    <h3>Jeans & Trousers</h3>
+                    <a href="#">All Jeans</a>
+                    <a href="#">Jeggings</a>
+                    <a href="#">Palazzos</a>
+                </div>
+                <div>
+                    <h3>Jackets & Shrugs</h3>
+                    <a href="#">All Jackets</a>
+                    <a href="#">Shrugs</a>
+                </div>
+            </div>
+
+            <!-- Men -->
+            <div class="mega-menu" data-category="men" role="region" aria-labelledby="men"
+                style="display:none; position:absolute; left:0; right:0; background:#fff; border-top:3px solid #5a2a6a; box-shadow:0 4px 12px rgb(0 0 0 / 0.1); padding:20px 40px; box-sizing:border-box; z-index:40; font-size:14px; color:#444; flex-wrap: wrap;">
+                <div>
+                    <h3>Topwear</h3>
+                    <a href="#">T-Shirts</a>
+                    <a href="#">Shirts</a>
+                    <a href="#">Sweatshirts</a>
+                </div>
+                <div>
+                    <h3>Bottomwear</h3>
+                    <a href="#">Jeans</a>
+                    <a href="#">Trousers</a>
+                    <a href="#">Shorts</a>
+                </div>
+                <div>
+                    <h3>Innerwear & Sleepwear</h3>
+                    <a href="#">Vests</a>
+                    <a href="#">Boxers</a>
+                </div>
+            </div>
+
+            <!-- Kids -->
+            <div class="mega-menu" data-category="kids" role="region" aria-labelledby="kids"
+                style="display:none; position:absolute; left:0; right:0; background:#fff; border-top:3px solid #5a2a6a; box-shadow:0 4px 12px rgb(0 0 0 / 0.1); padding:20px 40px; box-sizing:border-box; z-index:40; font-size:14px; color:#444; flex-wrap: wrap;">
+                <div>
+                    <h3>Boys Clothing</h3>
+                    <a href="#">T-Shirts</a>
+                    <a href="#">Shirts</a>
+                    <a href="#">Shorts</a>
+                </div>
+                <div>
+                    <h3>Girls Clothing</h3>
+                    <a href="#">Dresses</a>
+                    <a href="#">Tops</a>
+                    <a href="#">Skirts</a>
+                </div>
+                <div>
+                    <h3>Infants</h3>
+                    <a href="#">Rompers</a>
+                    <a href="#">Onesies</a>
+                </div>
+            </div>
+
+            <!-- Home & Kitchen -->
+            <div class="mega-menu" data-category="home-kitchen" role="region" aria-labelledby="home-kitchen"
+                style="display:none; position:absolute; left:0; right:0; background:#fff; border-top:3px solid #5a2a6a; box-shadow:0 4px 12px rgb(0 0 0 / 0.1); padding:20px 40px; box-sizing:border-box; z-index:40; font-size:14px; color:#444; flex-wrap: wrap;">
+                <div>
+                    <h3>Kitchen & Dining</h3>
+                    <a href="#">Cookware</a>
+                    <a href="#">Dinnerware</a>
+                    <a href="#">Storage</a>
+                </div>
+                <div>
+                    <h3>Home Decor</h3>
+                    <a href="#">Wall Decor</a>
+                    <a href="#">Clocks</a>
+                    <a href="#">Showpieces</a>
+                </div>
+                <div>
+                    <h3>Bedding</h3>
+                    <a href="#">Bedsheets</a>
+                    <a href="#">Blankets</a>
+                    <a href="#">Pillows</a>
+                </div>
+            </div>
+
+            <!-- Beauty & Health -->
+            <div class="mega-menu" data-category="beauty-health" role="region" aria-labelledby="beauty-health"
+                style="display:none; position:absolute; left:0; right:0; background:#fff; border-top:3px solid #5a2a6a; box-shadow:0 4px 12px rgb(0 0 0 / 0.1); padding:20px 40px; box-sizing:border-box; z-index:40; font-size:14px; color:#444; flex-wrap: wrap;">
+                <div>
+                    <h3>Makeup</h3>
+                    <a href="#">Lipsticks</a>
+                    <a href="#">Eyeliner</a>
+                    <a href="#">Foundation</a>
+                </div>
+                <div>
+                    <h3>Skincare</h3>
+                    <a href="#">Face Wash</a>
+                    <a href="#">Moisturizers</a>
+                    <a href="#">Sunscreen</a>
+                </div>
+                <div>
+                    <h3>Health & Wellness</h3>
+                    <a href="#">Supplements</a>
+                    <a href="#">Personal Care</a>
+                </div>
+            </div>
+
+            <!-- Jewellery & Accessories -->
+            <div class="mega-menu" data-category="jewellery-accessories" role="region"
+                aria-labelledby="jewellery-accessories"
+                style="display:none; position:absolute; left:0; right:0; background:#fff; border-top:3px solid #5a2a6a; box-shadow:0 4px 12px rgb(0 0 0 / 0.1); padding:20px 40px; box-sizing:border-box; z-index:40; font-size:14px; color:#444; flex-wrap: wrap;">
+                <div>
+                    <h3>Jewellery</h3>
+                    <a href="#">Earrings</a>
+                    <a href="#">Necklaces</a>
+                    <a href="#">Rings</a>
+                </div>
+                <div>
+                    <h3>Accessories</h3>
+                    <a href="#">Bags</a>
+                    <a href="#">Watches</a>
+                    <a href="#">Sunglasses</a>
+                </div>
+            </div>
+
+            <!-- Bags & Footwear -->
+            <div class="mega-menu" data-category="bags-footwear" role="region" aria-labelledby="bags-footwear"
+                style="display:none; position:absolute; left:0; right:0; background:#fff; border-top:3px solid #5a2a6a; box-shadow:0 4px 12px rgb(0 0 0 / 0.1); padding:20px 40px; box-sizing:border-box; z-index:40; font-size:14px; color:#444; flex-wrap: wrap;">
+                <div>
+                    <h3>Bags</h3>
+                    <a href="#">Handbags</a>
+                    <a href="#">Backpacks</a>
+                    <a href="#">Clutches</a>
+                </div>
+                <div>
+                    <h3>Footwear</h3>
+                    <a href="#">Flats</a>
+                    <a href="#">Heels</a>
+                    <a href="#">Sandals</a>
+                </div>
+            </div>
+
+            <!-- Electronics -->
+            <div class="mega-menu" data-category="electronics" role="region" aria-labelledby="electronics"
+                style="display:none; position:absolute; left:0; right:0; background:#fff; border-top:3px solid #5a2a6a; box-shadow:0 4px 12px rgb(0 0 0 / 0.1); padding:20px 40px; box-sizing:border-box; z-index:40; font-size:14px; color:#444; flex-wrap: wrap;">
+                <div>
+                    <h3>Mobiles & Accessories</h3>
+                    <a href="#">Smartphones</a>
+                    <a href="#">Power Banks</a>
+                    <a href="#">Chargers</a>
+                </div>
+                <div>
+                    <h3>Home Appliances</h3>
+                    <a href="#">Irons</a>
+                    <a href="#">Mixers</a>
+                    <a href="#">Heaters</a>
+                </div>
+                <div>
+                    <h3>Audio & Video</h3>
+                    <a href="#">Headphones</a>
+                    <a href="#">Speakers</a>
+                </div>
+            </div>
+
+            <!-- Sports -->
+            <div class="mega-menu" data-category="sports" role="region" aria-labelledby="sports"
+                style="display:none; position:absolute; left:0; right:0; background:#fff; border-top:3px solid #5a2a6a; box-shadow:0 4px 12px rgb(0 0 0 / 0.1); padding:20px 40px; box-sizing:border-box; z-index:40; font-size:14px; color:#444; flex-wrap: wrap;">
+                <div>
+                    <h3>Sportswear</h3>
+                    <a href="#">T-Shirts</a>
+                    <a href="#">Shorts</a>
+                    <a href="#">Tracksuits</a>
+                </div>
+                <div>
+                    <h3>Equipment</h3>
+                    <a href="#">Cricket</a>
+                    <a href="#">Football</a>
+                    <a href="#">Badminton</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-nav">
+        <nav class="category-nav" role="menubar" aria-label="Product Categories">
+            <a href="#" role="menuitem" tabindex="0" data-category="women-ethnic">Women Ethnic</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="women-western">Women Western</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="men">Men</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="kids">Kids</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="home-kitchen">Home & Kitchen</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="beauty-health">Beauty & Health</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="jewellery-accessories">Jewellery & Accessories</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="bags-footwear">Bags & Footwear</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="electronics">Electronics</a>
+            <a href="#" role="menuitem" tabindex="0" data-category="sports">Sports</a>
+        </nav>
+    </div>
+
+    <div class="mobile-search">
+        <div class="search-bar">
+            <input type="text" placeholder="Try Saree, Kurti or Search by Product Code" />
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+
+    <section class="banner" aria-label="Promotional banner">
+        <div class="banner-text">
+            <h1>Smart Shopping</h1>
+            <h1>Trusted by Millions</h1>
+            <button class="shop-now-btn" type="button">Shop Now</button>
+        </div>
+        <img src="https://images.meesho.com/images/marketing/1760553615790.webp" alt="Banner showing happy man and woman with colorful background"
+            class="banner-img" />
+    </section>
+
+    <section class="features" aria-label="Features">
+        <div class="feature" tabindex="0">
+            <div class="feature-icon">
+                <i class="fa fa-undo"></i>
+            </div>
+            <p>7 Days Easy Return</p>
+        </div>
+        <div class="feature" tabindex="0">
+            <div class="feature-icon">
+                <i class="fa fa-money-bill"></i>
+            </div>
+            <p>Cash on Delivery</p>
+        </div>
+        <div class="feature" tabindex="0">
+            <div class="feature-icon">
+                <i class="fa fa-tags"></i>
+            </div>
+            <p>Lowest Prices</p>
+        </div>
+    </section>
+
+    <!-- Komal Bhalerao And Yogesh Mungase Contribution -->
+
+    <!-- Gallery Section -->
+    <div class="gallery">
+        <div>
+            <a href="#modal1"><img src="https://images.meesho.com/images/marketing/1744634654837.webp" alt="Ethnic Wear" loading="lazy" /></a>
+            <p>Ethnic Wear</p>
+        </div>
+        <div>
+            <a href="#modal2"><img src="https://images.meesho.com/images/marketing/1744634725496.webp" alt="Western Dresses" loading="lazy" /></a>
+            <p>Western Wear</p>
+        </div>
+        <div>
+            <a href="#modal3"><img src="https://images.meesho.com/images/marketing/1744634780426.webp" alt="Mens Wear" loading="lazy" /></a>
+            <p>Mens Wear</p>
+        </div>
+        <div>
+            <a href="#modal4"><img src="https://images.meesho.com/images/marketing/1744634814643.webp" alt="Footwear" loading="lazy" /></a>
+            <p>Footwear</p>
+        </div>
+        <div>
+            <a href="#modal5"><img src="https://images.meesho.com/images/marketing/1744634835018.webp" alt="Home Decor" loading="lazy" /></a>
+            <p>Home Decor</p>
+        </div>
+        <div>
+            <a href="#modal6"><img src="https://images.meesho.com/images/marketing/1744634871107.webp" alt="Beauty" loading="lazy" /></a>
+            <p>Beauty</p>
+        </div>
+        <div>
+            <a href="#modal7"><img src="https://images.meesho.com/images/marketing/1744634909968.webp" alt="Accessories" loading="lazy" /></a>
+            <p>Accessories</p>
+        </div>
+    </div>
+
+
+    <!-- Banner Section -->
+    <div class="banner1">
+        <img src="https://images.meesho.com/images/marketing/1744698265981.webp" alt="Banner" class="banner-img" loading="lazy" />
+        <div class="content1">
+            <button>Shop Now</button>
+        </div>
+        <div class="categories1">
+            <div class="category1">
+                <img src="https://images.meesho.com/images/marketing/1744722796811.webp" alt="Lehengas">
+                <p>Lehengas</p>
+            </div>
+            <div class="category1">
+                <img src="https://images.meesho.com/images/marketing/1744635113661.webp" alt="Menwear">
+                <p>Menwear</p>
+            </div>
+            <div class="category1">
+                <img src="https://images.meesho.com/images/marketing/1744635139351.webp" alt="Sarees">
+                <p>Sarees</p>
+            </div>
+            <div class="category1">
+                <img src="https://images.meesho.com/images/marketing/1744635189897.webp" alt="Jewellery">
+                <p>Jewellery</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Brands Section -->
+    <section class="top-brands-section">
+        <div class="section-header">
+            <h2>Top Brands</h2>
+            <p>Shop from your favorite brands at best prices</p>
+        </div>
+
+        <div class="brands-container">
+            <button class="scroll-btn left-scroll-btn" aria-label="Scroll left">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="brands-scroller">
+                <div class="brands-track">
+                    <div class="brand-card">
+                        <img src="https://images.meesho.com/images/marketing/1744635646070.webp" alt="Books" loading="lazy">
+                        <span class="brand-name">Books</span>
+                        <span class="discount-badge">Up to 60% off</span>
+                    </div>
+                    <div class="brand-card">
+                        <img src="https://images.meesho.com/images/marketing/1744635614888.webp" alt="Footwear" loading="lazy">
+                        <span class="brand-name">Footwear</span>
+                        <span class="discount-badge">Up to 55% off</span>
+                    </div>
+                    <div class="brand-card">
+                        <img src="https://images.meesho.com/images/marketing/1744635521751.webp" alt="Electronics" loading="lazy">
+                        <span class="brand-name">Electronics</span>
+                        <span class="discount-badge">Up to 70% off</span>
+                    </div>
+                    <div class="brand-card">
+                        <img src="https://images.meesho.com/images/marketing/1744635432891.webp" alt="Denver" loading="lazy">
+                        <span class="brand-name">Denver</span>
+                        <span class="discount-badge">Up to 65% off</span>
+                    </div>
+                    <div class="brand-card">
+                        <img src="https://images.meesho.com/images/marketing/1744635464683.webp" alt="Oppo" loading="lazy">
+                        <span class="brand-name">Oppo</span>
+                        <span class="discount-badge">Up to 50% off</span>
+                    </div>
+                    <div class="brand-card">
+                        <img src="https://images.meesho.com/images/marketing/1744635497001.webp" alt="Makeup" loading="lazy">
+                        <span class="brand-name">Makeup</span>
+                        <span class="discount-badge">Up to 45% off</span>
+                    </div>
+                    <div class="brand-card">
+                        <img src="https://images.meesho.com/images/marketing/1744635542873.webp" alt="Nivea" loading="lazy">
+                        <span class="brand-name">Nivea</span>
+                        <span class="discount-badge">Up to 60% off</span>
+                    </div>
+                    <div class="brand-card">
+                        <img src="https://images.meesho.com/images/marketing/1744635402151.webp" alt="Bags" loading="lazy">
+                        <span class="brand-name">Bags</span>
+                        <span class="discount-badge">Up to 70% off</span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="scroll-btn right-scroll-btn" aria-label="Scroll right">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div class="view-all-container">
+            <button class="view-all-btn">View All Brands</button>
+        </div>
+    </section>
+
+
+    <!-- Product Section -->
+
+    <div class="section-header">
+        <h2>Products For You</h2>
+        <p>Shop Your Favorite Products</p>
+    </div>
+    <div class="main-container">
+        <!-- Filters Column (Visible on desktop) -->
+        <div class="filters-column">
+            <div class="filter-section">
+                <div class="filter-header">
+                    <h3>Filters</h3>
+                    <button class="clear-filters">Clear All</button>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Categories</h4>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="fashion" name="category" value="fashion" checked>
+                            <label for="fashion">Fashion</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="electronics" name="category" value="electronics" checked>
+                            <label for="electronics">Electronics</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="home" name="category" value="home" checked>
+                            <label for="home">Home & Kitchen</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="beauty" name="category" value="beauty" checked>
+                            <label for="beauty">Beauty & Health</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <div class="price-range">
+                        <input type="number" placeholder="Min" id="min-price" value="0">
+                        <input type="number" placeholder="Max" id="max-price" value="5000">
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Rating</h4>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="rating-4" name="rating" value="4" checked>
+                            <label for="rating-4">4 ★ & above</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="rating-3" name="rating" value="3" checked>
+                            <label for="rating-3">3 ★ & above</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="rating-2" name="rating" value="2" checked>
+                            <label for="rating-2">2 ★ & above</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Delivery Options</h4>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="free-delivery" name="delivery" value="free" checked>
+                            <label for="free-delivery">Free Delivery</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="express-delivery" name="delivery" value="express" checked>
+                            <label for="express-delivery">Express Delivery</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="apply-filters">Apply Filters</button>
+            </div>
+        </div>
+
+        <!-- Products Column -->
+        <div class="products-column">
+            <div class="products-container" id="products-container">
+                <!-- Products will be loaded here dynamically -->
+            </div>
+            <div class="loading" id="loading">Loading more products...</div>
+        </div>
+    </div>
+
+    <!-- Mobile Filter Button -->
+    <button class="mobile-filter-btn" id="mobile-filter-btn">☰</button>
+
+    <!-- Mobile Filter Modal -->
+    <div class="filter-modal" id="filter-modal">
+        <div class="filter-modal-content">
+            <div class="filter-modal-header">
+                <h3>Filters</h3>
+                <button class="close-modal" id="close-modal">×</button>
+            </div>
+
+            <!-- Same filter content as desktop -->
+            <div class="filter-group">
+                <h4>Categories</h4>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="mobile-fashion" name="category" value="fashion" checked>
+                        <label for="mobile-fashion">Fashion</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="mobile-electronics" name="category" value="electronics" checked>
+                        <label for="mobile-electronics">Electronics</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="mobile-home" name="category" value="home" checked>
+                        <label for="mobile-home">Home & Kitchen</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="mobile-beauty" name="category" value="beauty" checked>
+                        <label for="mobile-beauty">Beauty & Health</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Price Range</h4>
+                <div class="price-range">
+                    <input type="number" placeholder="Min" id="mobile-min-price" value="0">
+                    <input type="number" placeholder="Max" id="mobile-max-price" value="5000">
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Rating</h4>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="mobile-rating-4" name="rating" value="4" checked>
+                        <label for="mobile-rating-4">4 ★ & above</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="mobile-rating-3" name="rating" value="3" checked>
+                        <label for="mobile-rating-3">3 ★ & above</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="mobile-rating-2" name="rating" value="2" checked>
+                        <label for="mobile-rating-2">2 ★ & above</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h4>Delivery Options</h4>
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <input type="checkbox" id="mobile-free-delivery" name="delivery" value="free" checked>
+                        <label for="mobile-free-delivery">Free Delivery</label>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="mobile-express-delivery" name="delivery" value="express" checked>
+                        <label for="mobile-express-delivery">Express Delivery</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <button class="apply-filters" id="mobile-apply-filters">Apply Filters</button>
+        </div>
+    </div>
+
+
+
+    <!-- Pandurang Bade And Ajay Unawane Contribution -->
+
+    <footer>
+        <div class="footer-container">
+            <!-- First Section - About and App Download -->
+            <div class="footer-section">
+                <h2>Shop Non-Stop on Meesho</h2>
+                <p>Trusted by crores of Indians<br>Cash on Delivery | Free Delivery</p>
+                <div class="app-download">
+                    <a href="https://play.google.com/store/apps/details?id=com.meesho.android">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png"
+                            alt="Get it on Google Play">
+                    </a>
+                    <a href="https://apps.apple.com/in/app/meesho/id1457958492">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png"
+                            alt="Available on the App Store">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Second Section - Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <div>
+                        <ul>
+                            <li><a href="/careers">Careers</a></li>
+                            <li><a href="/become-a-supplier">Become a supplier</a></li>
+                            <li><a href="/hall-of-fame">Hall of Fame</a></li>
+                            <li><a href="/sitemap">Sitemap</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li><a href="/legal-and-policies">Legal and Policies</a></li>
+                            <li><a href="/meesho-tech-blog">Meesho Tech Blog</a></li>
+                            <li><a href="/notices-and-returns">Notices and Returns</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3>Reach out to us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/meeshosocial" aria-label="Facebook"><i
+                            class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/meeshoapp" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UC3yP9HSjzW4VQRd91v0QmIA" aria-label="YouTube"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/company/meesho" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/Meesho_Official" aria-label="Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <!-- Third Section - Contact Info -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>
+                    Meesho Private Limited<br>
+                    (Formerly known as Fashnear Technologies Private Limited)<br>
+                    CIN: U74900KA2015PTC082263<br>
+                    3rd Floor, Wing-E, Helios Business Park,<br>
+                    Kadubeesanahalli Village, Varthur Hobli,<br>
+                    Outer Ring Road Bellandur, Bangalore,<br>
+                    Bangalore South, Karnataka, India, 560103<br>
+                    E-mail address: query@meesho.com
+                </p>
+            </div>
+        </div>
+
+        <!-- Footer Links Sections -->
+        <div class="footer-container" style="grid-template-columns: 1fr;">
+            <div class="footer-section">
+                <h3>Popular Categories</h3>
+                <div class="footer-links" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <div>
+                        <p>Women Ethnic</p>
+                        <a href="#">Women Kurtis</a>
+                        <a href="#">Women Sarees</a>
+                        <a href="#">Women Dress Materials</a>
+                        <a href="#">Women Lehengas</a>
+                        <a href="#">Women Jackets</a>
+                    </div>
+                    <div>
+                        <p>Women Western</p>
+                        <a href="#">Women Tops</a>
+                        <a href="#">Women Dresses</a>
+                        <a href="#">Women T-shirts</a>
+                        <a href="#">Women Jeans</a>
+                        <a href="#">Women Nightwear</a>
+                    </div>
+                    <div>
+                        <p>Men</p>
+                        <a href="#">Men T-shirts</a>
+                        <a href="#">Men Shirts</a>
+                        <a href="#">Men Jeans</a>
+                        <a href="#">Men Boxers</a>
+                        <a href="#">Men Jackets</a>
+                    </div>
+                    <div>
+                        <p>Kids</p>
+                        <a href="#">Kids Dresses</a>
+                        <a href="#">Kids T-shirts</a>
+                        <a href="#">Kids Jeans</a>
+                        <a href="#">Kids Shoes</a>
+                        <a href="#">Kids Toys</a>
+                    </div>
+                    <div>
+                        <p>Home & Kitchen</p>
+                        <a href="#">Bedsheets</a>
+                        <a href="#">Kitchen Storage</a>
+                        <a href="#">Towels</a>
+                        <a href="#">Cookware</a>
+                        <a href="#">Home Decor</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            © 2015-2025 Meesho.com | All Rights Reserved
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
